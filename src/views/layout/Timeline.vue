@@ -108,26 +108,23 @@
 </template>
 
 <script>
-import VWidget from '@/components/VWidget';
-import API from '@/api';
-import VCircle from '@/components/circle/VCircle.js';
+import VWidget from "@/components/VWidget";
+import API from "@/api";
+import VCircle from "@/components/circle/VCircle.js";
 export default {
   components: {
     VWidget,
-    VCircle,
+    VCircle
   },
-  data () {
-    return {
-    };
+  data() {
+    return {};
   },
   computed: {
-    activity () {
+    activity() {
       return API.getActivity();
     }
-  },  
+  },
 
-  methods: {
-  }
+  methods: {}
 };
 </script>
-

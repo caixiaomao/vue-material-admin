@@ -57,12 +57,12 @@
   </div>
 </template>
 <script>
-import AppDrawer from '@/components/AppDrawer';
-import AppToolbar from '@/components/AppToolbar';
-import AppFab from '@/components/AppFab';
-import PageHeader from '@/components/PageHeader';
-import ThemeSettings from '@/components/ThemeSettings';
-import AppEvents from  './event';
+import AppDrawer from "@/components/AppDrawer";
+import AppToolbar from "@/components/AppToolbar";
+import AppFab from "@/components/AppFab";
+import PageHeader from "@/components/PageHeader";
+import ThemeSettings from "@/components/ThemeSettings";
+import AppEvents from "./event";
 export default {
   components: {
     AppDrawer,
@@ -76,28 +76,25 @@ export default {
     rightDrawer: false,
     snackbar: {
       show: false,
-      text: '',
-      color: '',
+      text: "",
+      color: ""
     }
   }),
 
-  computed: {
+  computed: {},
 
-  },
-
-  created () {
+  created() {
     AppEvents.forEach(item => {
       this.$on(item.name, item.callback);
     });
     window.getApp = this;
   },
   methods: {
-    openThemeSettings () {
+    openThemeSettings() {
       this.$vuetify.goTo(0);
-      this.rightDrawer = (!this.rightDrawer);
+      this.rightDrawer = !this.rightDrawer;
     }
-  },
-
+  }
 };
 </script>
 
